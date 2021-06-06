@@ -5,19 +5,19 @@ import Scheduler, {
   DATE_FORMAT,
   DemoData,
 } from "../react-big-scheduler/index";
-import Nav from "./Nav";
-import Tips from "./Tips";
+// import Nav from "./Nav";
+// import Tips from "./Tips";
 import ViewSrcCode from "./ViewSrcCode";
 import withDragDropContext from "./withDnDContext";
+import moment from "moment";
 
 class Basic extends Component {
   constructor(props) {
     super(props);
 
-    // let schedulerData = new SchedulerData(new moment("2017-12-18").format(DATE_FORMAT), ViewTypes.Week);
-    let schedulerData = new SchedulerData("2017-12-18", ViewTypes.Week);
-    schedulerData.localeMoment.locale("en");
-    console.log(`2222`, 2222);
+    // let schedulerData = new SchedulerData(new moment("2020-12-18").format(DATE_FORMAT), ViewTypes.Week);
+    let schedulerData = new SchedulerData("2020-12-18", ViewTypes.Week);
+    schedulerData.setLocaleMoment(moment);
     schedulerData.setResources(DemoData.resources);
     schedulerData.setEvents(DemoData.events);
     this.state = {
@@ -25,16 +25,15 @@ class Basic extends Component {
     };
   }
 
-  render() {
+  render3() {
     console.log(`3333`, 3333);
     return <div>2121211111111112</div>;
   }
-  render2() {
+  render() {
     const { viewModel } = this.state;
-    return <div>322xxxxxxxxxxxxx4543</div>;
     return (
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <div>
           <h3 style={{ textAlign: "center" }}>
             Basic example
@@ -62,7 +61,7 @@ class Basic extends Component {
             toggleExpandFunc={this.toggleExpandFunc}
           />
         </div>
-        <Tips />
+        {/* <Tips /> */}
       </div>
     );
   }
@@ -226,9 +225,4 @@ class Basic extends Component {
   };
 }
 
-// export default withDragDropContext(Basic);
-export default Basic;
-
-// export default () => {
-//     return <div>xxxxxxdxxxxxx</div>
-// }
+export default withDragDropContext(Basic);

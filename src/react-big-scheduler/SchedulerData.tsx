@@ -2,7 +2,7 @@ import moment from "moment";
 import { RRuleSet, rrulestr } from "rrule";
 import config from "./config";
 import behaviors from "./behaviors";
-import {  DATE_FORMAT, DATETIME_FORMAT } from "./constant";
+import { DATE_FORMAT, DATETIME_FORMAT } from "./constant";
 import CellUnits from "./CellUnits";
 import ViewTypes from "./ViewTypes";
 
